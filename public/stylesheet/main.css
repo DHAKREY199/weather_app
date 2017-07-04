@@ -1,0 +1,426 @@
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+html, body{
+    font-size: 100%;
+	font-family: 'PT Sans Narrow', sans-serif;
+    background:url(http://cdn.wallpapersafari.com/94/48/A2Xw7i.jpg) no-repeat 0px 0px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+}
+h1,h2,h3,h4,h5,h6,input,p,a,select{
+	font-family: 'PT Sans Narrow', sans-serif;
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover,body a{
+	text-decoration:none;
+}
+/*-- main --*/
+.agileits_copyright{
+	text-align: center;
+}
+.agileits_copyright p{
+	font-size: 1em;
+    color:#fff;
+    margin: 3em 0 0;
+    line-height: 1.8em;
+    padding: 0 1em;
+    text-transform: capitalize;
+}
+.agileits_copyright p a {
+    color:#ffd700;
+    text-decoration: none;
+}
+.agileits_copyright p a:hover{
+	color:#fff;
+}
+input[type="submit"],.btn-primary,.agileits_copyright p a,.w3l_search_bottom ul.agileits_social_icons li a{
+	transition:.5s ease-in;
+	-webkit-transition:.5s ease-in;
+	-moz-transition:.5s ease-in;
+	-o-transition:.5s ease-in;
+	-ms-transition:.5s ease-in;
+}
+.main{
+	padding:2em 0;
+}
+.main h1{
+	text-align: center;
+    color:#ffffff;
+    font-size:3em;
+    margin-bottom: 1em;
+	text-transform:capitalize;
+}
+.w3layouts_main_grids{
+	width:55%;
+	margin:0 auto;
+}
+.w3layouts_main_grid_left{
+	float:left;
+	width:35%;
+}
+.w3layouts_main_grid_right{
+	float:right;
+	width:64%;
+}
+.w3_search{
+	padding:.5em 1em 1em;
+	background:#FFD700;
+}
+.w3_search form{
+	padding:10px;
+	border-bottom:1px solid #fff;
+}
+.w3_search input[type="text"]{
+	outline: none;
+    color: #212121;
+    padding: 0;
+    font-size: 14px;
+    width: 90%;
+    background: none;
+    border: none;
+}
+.w3_search input[type="text"]::-webkit-input-placeholder{
+	color:#212121 !important;
+}
+.w3_search input[type="submit"]{
+	outline: none;
+    padding: 0;
+    width: 8%;
+    background: url(/search.png) no-repeat 2px -1px;
+    height: 18px;
+    border: none;
+    cursor: pointer;
+}
+.w3l_search_bottom ul.w3ls_weather li{
+	display:block;
+	font-size:1.25em;
+	color:#fff;
+	padding:.5em;
+	border-bottom:1px solid #fff;
+}
+.w3l_search_bottom ul.w3ls_weather li i{
+	display: block;
+    font-size: .5em;
+    color: #48ebfa;
+}
+.w3l_search_bottom ul.w3ls_weather li span{
+	float: right;
+    font-size: 1.5em;
+    margin-top:-9px;
+}
+.w3l_search_bottom {
+    background:rgba(33, 33, 33, 0.57);
+}
+.w3l_search_bottom ul.agileits_social_icons{
+	text-align:center;
+}
+.w3l_search_bottom ul.agileits_social_icons li{
+	display:inline-block;
+}
+.w3l_search_bottom ul.agileits_social_icons li a{
+	width:35px;
+	height:35px;
+	border:1px solid #fff;
+	color:#fff;
+	border-radius:25px;
+	text-align:center;
+	display:block;
+}
+.w3l_search_bottom ul.agileits_social_icons li a.agileinfo_facebook:hover{
+	background:#3b5998;
+}
+.w3l_search_bottom ul.agileits_social_icons li a.wthree_instagram:hover{
+	background:#f56040;
+}
+.w3l_search_bottom ul.agileits_social_icons li a.w3_agileits_twitter:hover{
+	background:#1da1f2;
+}
+.w3l_search_bottom ul.agileits_social_icons li a.agile_google:hover{
+	background:#dd4b39;
+}
+.w3l_search_bottom ul.agileits_social_icons li a i {
+    line-height: 2.5em;
+    font-size: 14px;
+}
+.w3l_search_bottom ul.agileits_social_icons {
+    text-align: center;
+    padding:1.4em 0;
+}
+.agileits_w3layouts_main_grid_right{
+	background:url(http://wallpapermonkey.com/wp-content/uploads/2016/02/new-york-city-wallpaper.jpg) no-repeat 0px 0px;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-ms-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+}
+.w3_agile_main_grid_right,.agileits_w3layouts_main_grid_right{
+	min-height:315px;
+}
+.w3_agile_main_grid_left{
+	float: left;
+    width: 54%;
+    padding:1.5em 0 0 2em;
+}
+.w3_agile_main_grid_left h2{
+	font-size:2em;
+	color:#fff;
+}
+.w3_agile_main_grid_left p{
+	color:#fff;
+	font-size:14px;
+}
+.w3_agile_main_grid_right{
+	float:right;
+	width:40%;
+	background:rgba(33, 33, 33, 0.57);
+}
+.w3layouts_weather_updates li{
+	display: inline-block;
+    font-size: 1.5em;
+    color: #fff;
+    padding:.85em .5em;
+    border-bottom: 2px solid #414141;
+	width: 89%;
+}
+.w3layouts_weather_updates li span{
+	float: right;
+	font-size:1em;
+}
+.w3layouts_weather_updates li span i{
+	color:#48ebfa;
+    font-size: .5em;
+    display: block;
+    line-height: 0.5em;
+    text-align: right;
+}
+.w3layouts_weather_updates li:last-child{
+	border-bottom:none;
+}
+.w3_agile_main_grid_right1 h4 {
+    font-size: 14px;
+	border-bottom:1px solid;
+    color:#b4b4b4;
+    font-weight: 100;
+}
+.w3_agile_main_grid_right1 h5 {
+	font-size: 2.5em;
+    color: #FFD700;
+    padding: .5em 0 .2em;
+}
+.w3_agile_main_grid_right1{
+	padding:1em;
+	background:#212121;
+}
+.w3_weather_scroll{
+	text-align:center;
+	padding: 0 .8em;
+}
+/*-- start-responsive-design --*/
+@media (max-width:1440px){
+	.w3layouts_main_grids {
+		width: 60%;
+	}
+}
+@media (max-width: 1366px){
+	.w3layouts_main_grids {
+		width: 65%;
+	}
+}
+@media (max-width: 1280px){
+	.w3_agile_main_grid_left {
+		width: 52%;
+	}
+	.w3_agile_main_grid_right {
+		width: 41%;
+	}
+}
+@media (max-width: 1080px){
+	.w3layouts_main_grids {
+		width: 78%;
+	}
+}
+@media (max-width: 1024px){
+	.w3_agile_main_grid_right {
+		width: 43%;
+	}
+	.w3_agile_main_grid_left {
+		width: 50%;
+	}
+}
+@media (max-width: 991px){
+	.w3layouts_main_grids {
+		width: 80%;
+	}
+}
+@media (max-width: 800px){
+	.w3layouts_main_grids {
+		width: 90%;
+	}
+	.w3_agile_main_grid_left {
+		width: 40%;
+	}
+	.w3_agile_main_grid_right {
+		width: 48%;
+	}
+	.w3_search input[type="submit"] {
+		width: 12%;
+	}
+	.w3_search input[type="text"] {
+		width: 86%;
+	}
+}
+@media (max-width: 736px){
+	.w3_agile_main_grid_right {
+		width: 51%;
+	}
+}
+@media (max-width: 667px){
+	.main h1 {
+		font-size: 2.7em;
+	}
+	.w3layouts_main_grid_left,.w3layouts_main_grid_right {
+		float: none;
+		width: 100%;
+	}
+	.w3layouts_main_grid_right{
+		margin:1em 0 0;
+	}
+	.w3layouts_main_grids {
+		width: 75%;
+	}
+	.w3_search input[type="submit"] {
+		width: 8%;
+	}
+	.w3_search input[type="text"] {
+		width: 91%;
+	}
+	.w3_agile_main_grid_right {
+		width: 45%;
+	}
+}
+@media (max-width: 640px){
+	.w3_agile_main_grid_right {
+		width: 46%;
+	}
+	.w3layouts_weather_updates li {
+		padding: .5em;
+	}
+	.w3_agile_main_grid_right, .agileits_w3layouts_main_grid_right {
+		min-height: 280px;
+	}
+}
+@media (max-width: 600px){
+	.w3_agile_main_grid_right {
+		width: 50%;
+	}
+	.w3_agile_main_grid_right1 h5 {
+		font-size: 2.3em;
+	}
+}
+@media (max-width: 568px){
+	.w3_agile_main_grid_left {
+		width: 28%;
+	}
+	.w3_agile_main_grid_right {
+		width: 55%;
+	}
+}
+@media (max-width: 480px){
+	.main h1 {
+		font-size: 2.3em;
+	}
+	.w3_search input[type="text"] {
+		width: 90%;
+	}
+	.w3layouts_main_grids {
+		width: 85%;
+	}
+}
+@media (max-width: 414px){
+	.w3layouts_main_grids {
+		width: 90%;
+	}
+	.w3layouts_weather_updates li span {
+		font-size: .9em;
+	}
+	.w3_agile_main_grid_right {
+		width: 61%;
+	}
+	.w3_agile_main_grid_left {
+		padding: 1em 0 0 1em;
+	}
+}
+@media (max-width: 384px){
+	.main h1 {
+		font-size: 2em;
+		margin-bottom: .5em;
+	}
+	.agileits_copyright p {
+		margin: 2em 0 0;
+	}
+}
+@media (max-width: 375px){
+	.w3layouts_weather_updates li {
+		width: 87%;
+	}
+}
+@media (max-width: 320px){
+	.main h1 {
+		font-size: 1.7em;
+	}
+	.w3l_search_bottom ul.w3ls_weather li span {
+		font-size: 1.3em;
+	}
+	.w3l_search_bottom ul.w3ls_weather li {
+		font-size: 1.1em;
+	}
+	.w3_agile_main_grid_left h2 {
+		font-size: 1.5em;
+	}
+	.w3_agile_main_grid_left p {
+		font-size: 11px;
+	}
+	.w3layouts_weather_updates li {
+		padding: .5em;
+		font-size: 1.2em;
+	}
+	.w3_agile_main_grid_right, .agileits_w3layouts_main_grid_right {
+		min-height: 195px;
+	}
+	.w3_agile_main_grid_right1 h5 {
+		font-size: 2em;
+	}
+	.agileits_copyright p {
+		font-size: 14px;
+	}
+}
