@@ -1,8 +1,8 @@
 <html>
 <head>
-<title>Weather Application</title>
+<title>Weather in a city</title>
 
-<meta property="og:url" content="http://www.thundermarch.in"/>
+<meta property="og:url" content=""/>
 <meta property="og:title" content="Weather Application"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content=""/>
@@ -14,7 +14,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
  
-<script src="/javascript/jquery-2.2.3.min.js"></script> 
+<script src="/javascript/jquery-2.2.3.min.js"></script>
+<script src="/javascript/f-c.js"></script>
  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
@@ -23,12 +24,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 </head>
 <body>
+	
+	<% 
+		fToC = function(f){
+			return (f - 32) * (5 / 9);
+		}
+	%>
+	<%
+			String.prototype.capitalize = function() {
+    			return this.charAt(0).toUpperCase() + this.slice(1);
+			}
+	%>
+	
 
-<!DOCTYPE html>
 
 	<div class="main">
-		<h1><i class="wi 
-		wi-night-alt-cloudy" aria-hidden="true"></i> <%=obj.query%> </h1>
+		<h1><canvas class= <%=obj.hourly.data[0].icon%> width="50" height="50"></canvas> <%=obj.query%> </h1>
 		<div class="w3layouts_main_grids">
 			<div class="w3layouts_main_grid_left">
 				<div class="w3_search">
@@ -39,12 +50,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="w3l_search_bottom">
 					<ul class="w3ls_weather">
-						<li><i><%= obj.other_time[0].time %></i><%=obj.query%><span><%=obj.other_time[0].temp%>°</span></li>
-						<li><i><%= obj.other_time[1].time %></i><%=obj.query%><span><%=obj.other_time[1].temp%>°</span></li>
-						<li><i><%= obj.other_time[2].time %></i><%=obj.query%><span><%=obj.other_time[2].temp%>°</span></li>
-						<li><i><%= obj.other_time[3].time %></i><%=obj.query%><span><%=obj.other_time[3].temp%>°</span></li>
-						<li><i><%= obj.other_time[4].time %></i><%=obj.query%><span><%=obj.other_time[4].temp%>°</span></li>
-						<li><i><%= obj.other_time[5].time %></i><%=obj.query%><span><%=obj.other_time[5].temp%>°</span></li>
+						<li><i><%= obj.timeConverter(obj.hourly.data[0].time) %></i><%=obj.query.capitalize()%><span><%=Math.round(fToC(obj.hourly.data[0].temperature))%>°</span></li>
+						<li><i><%= obj.timeConverter(obj.hourly.data[1].time) %></i><%=obj.query.capitalize()%><span><%=Math.round(fToC(obj.hourly.data[1].temperature))%>°</span></li>
+						<li><i><%= obj.timeConverter(obj.hourly.data[5].time) %></i><%=obj.query.capitalize()%><span><%=Math.round(fToC(obj.hourly.data[5].temperature))%>°</span></li>
+						<li><i><%= obj.timeConverter(obj.hourly.data[7].time) %></i><%=obj.query.capitalize()%><span><%=Math.round(fToC(obj.hourly.data[7].temperature))%>°</span></li>
+						<li><i><%= obj.timeConverter(obj.hourly.data[9].time) %></i><%=obj.query.capitalize()%><span><%=Math.round(fToC(obj.hourly.data[9].temperature))%>°</span></li>
+						<li><i><%= obj.timeConverter(obj.hourly.data[10].time) %></i><%=obj.query.capitalize()%><span><%=Math.round(fToC(obj.hourly.data[10].temperature))%>°</span></li>
 					</ul>
 					<ul class="agileits_social_icons">
 						<li><a href="https://www.facebook.com/dhakrey199" class="agileinfo_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -58,24 +69,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="agileits_w3layouts_main_grid_right">
 					<div class="w3_agile_main_grid_left">
 						<h2></h2>
-						<p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= obj.current_time.time %></p>
+						<p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= obj.timeConverter(obj.current.time) %></p>
 					</div>
 					<div class="w3_agile_main_grid_right">
 						<ul class="w3layouts_weather_updates">
 							<li>
-								<canvas id="clear-day" width="25" height="25"></canvas>
+								<canvas class="clear-day" width="25" height="25"></canvas>
 								25°<span>Monday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 11:00 AM</i></span>
 							</li>
 							<li>
-								<canvas id="sleet" width="25" height="25"></canvas>
+								<canvas class="sleet" width="25" height="25"></canvas>
 								5°<span>Tuesday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 12:00 PM</i></span>
 							</li>
 							<li>
-								<canvas id="partly-cloudy-day" width="25" height="25"></canvas>
+								<canvas class="partly-cloudy-day" width="25" height="25"></canvas>
 								25°<span>Wednesday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 9:00 AM</i></span>
 							</li>
 							<li>
-								<canvas id="partly-cloudy-night" width="25" height="25"> </canvas>
+								<canvas class="partly-cloudy-night" width="25" height="25"> </canvas>
 								15°<span>Thursday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 4:00 PM</i></span>
 							</li>
 						</ul>
@@ -86,44 +97,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div id="owl-demo" class="owl-carousel"> 
 						<div class="item">
 							<div class="w3_weather_scroll">
-								<h4><%= obj.other_time[0].time %></h4>
-								<h5><span><%=obj.other_time[0].temp%>°</span></h5>
-								<canvas id="<%=obj.other_time[0].icon%>" width="30" height="30"></canvas>
+								<h4><%= obj.timeConverter(obj.hourly.data[0].time) %></h4>
+								<h5><span><%=Math.round(fToC(obj.hourly.data[0].temperature))%>°</span></h5>
+								<canvas class= <%=obj.hourly.data[0].icon%> width="30" height="30"></canvas>
 							</div>
 						</div>
 						<div class="item">
 							<div class="w3_weather_scroll">
-								<h4><%= obj.other_time[1].time %></h4>
-								<h5><span><%=obj.other_time[1].temp%>°</span></h5>
-								<canvas id="clear-night" width="30" height="30"></canvas>
+								<h4><%= obj.timeConverter(obj.hourly.data[1].time) %></h4>
+								<h5><span><%=Math.round(fToC(obj.hourly.data[1].temperature))%>°</span></h5>
+								<canvas class=<%=obj.hourly.data[1].icon%> width="30" height="30"></canvas>
 							</div>
 						</div>
 						<div class="item">
 							<div class="w3_weather_scroll">
-								<h4><%=obj.other_time[2].time%></h4>
-								<h5><span><%=obj.other_time[2].temp%>°</span></h5>
-								<canvas id="cloudy" width="30" height="30"></canvas>
+								<h4><%=obj.timeConverter(obj.hourly.data[5].time)%></h4>
+								<h5><span><%=Math.round(fToC(obj.hourly.data[5].temperature))%>°</span></h5>
+								<canvas class=<%=obj.hourly.data[5].icon%> width="30" height="30"></canvas>
 							</div>
 						</div>
 						<div class="item">
 							<div class="w3_weather_scroll">
-								<h4><%= obj.other_time[3].time %></h4>
-								<h5><span><%=obj.other_time[3].temp%>°</span></h5>
-								<canvas id="rain" width="30" height="30"></canvas>
+								<h4><%= obj.timeConverter(obj.hourly.data[7].time) %></h4>
+								<h5><span><%=Math.round(fToC(obj.hourly.data[7].temperature))%>°</span></h5>
+								<canvas class=<%=obj.hourly.data[7].icon%> width="30" height="30"></canvas>
 							</div>
 						</div>
 						<div class="item">
 							<div class="w3_weather_scroll">
-								<h4><%= obj.other_time[4].time %></h4>
-								<h5><span><%=obj.other_time[4].temp%>°</span></h5>
-								<canvas id="wind" width="30" height="30"></canvas>
+								<h4><%= obj.timeConverter(obj.hourly.data[9].time) %></h4>
+								<h5><span><%=Math.round(fToC(obj.hourly.data[9].temperature))%>°</span></h5>
+								<canvas class=<%=obj.hourly.data[9].icon%> width="30" height="30"></canvas>
 							</div>
 						</div>
 						<div class="item">
 							<div class="w3_weather_scroll">
-								<h4><%= obj.other_time[5].time %></h4>
-								<h5><span><%=obj.other_time[5].temp%>°</span></h5>
-								<canvas id="fog" width="25" height="25"></canvas>
+								<h4><%= obj.timeConverter(obj.hourly.data[10].time) %></h4>
+								<h5><span><%=Math.round(fToC(obj.hourly.data[10].temperature))%>°</span></h5>
+								<canvas class=<%=obj.hourly.data[10].icon%> width="25" height="25"></canvas>
 							</div>
 						</div>
 					</div>
@@ -153,29 +164,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<script src="/javascript/skycons.js"></script>
 		
 		<script>
-			 var icons = new Skycons({"color": "#fff"}),
-				  list  = [
-					"clear-night","wind","rain","cloudy", "snow","fog"
-				  ],
-				  i;
-
-			  for(i = list.length; i--; )
-				icons.set(list[i], list[i]);
-
-			  icons.play();
-		</script>
-		<script>
 			 var icons = new Skycons({"color": "#FFD700"}),
 				  list  = [
 					"partly-cloudy-day",
-					"partly-cloudy-night","clear-day","sleet"
+					"partly-cloudy-night","clear-day","sleet","clear-night","wind","rain","cloudy", "snow","fog"
 				  ],
 				  i;
 
-			  for(i = list.length; i--; )
-				icons.set(list[i], list[i]);
+			  for(i = list.length; i--; ) {
+				    var weatherType = list[i],
+				        elements = document.getElementsByClassName( weatherType );
+				    for (e = elements.length; e--;){
+				        icons.set( elements[e], weatherType );
+				    }
+				}
 
 			  icons.play();
 		</script>
+		
 	</div>
 <% include ./partials/footer %>
