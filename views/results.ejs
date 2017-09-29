@@ -74,20 +74,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="w3_agile_main_grid_right">
 						<ul class="w3layouts_weather_updates">
 							<li>
-								<canvas class="clear-day" width="25" height="25"></canvas>
-								25°<span>Monday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 11:00 AM</i></span>
+								<canvas class=<%=obj.daily.data[0].icon%> width="25" height="25"></canvas>
+								<%=Math.round(fToC(obj.daily.data[0].temperatureMax))%>°(max)<span><%= obj.Day(obj.day_num()) %><i><label class="fa fa-clock-o" aria-hidden="true"></label> 11:00 AM</i></span>
 							</li>
 							<li>
-								<canvas class="sleet" width="25" height="25"></canvas>
-								5°<span>Tuesday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 12:00 PM</i></span>
+								<canvas class=<%=obj.daily.data[1].icon%> width="25" height="25"></canvas>
+								<%=Math.round(fToC(obj.daily.data[1].temperatureMax))%>°(max)<span><%= obj.Day((obj.day_num()+1)%7) %><i><label class="fa fa-clock-o" aria-hidden="true"></label> 12:00 PM</i></span>
 							</li>
 							<li>
-								<canvas class="partly-cloudy-day" width="25" height="25"></canvas>
-								25°<span>Wednesday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 9:00 AM</i></span>
+								<canvas class=<%=obj.daily.data[2].icon%> width="25" height="25"></canvas>
+								<%=Math.round(fToC(obj.daily.data[2].temperatureMax))%>°(max)<span><%= obj.Day((obj.day_num()+2)%7) %><i><label class="fa fa-clock-o" aria-hidden="true"></label> 9:00 AM</i></span>
 							</li>
 							<li>
-								<canvas class="partly-cloudy-night" width="25" height="25"> </canvas>
-								15°<span>Thursday<i><label class="fa fa-clock-o" aria-hidden="true"></label> 4:00 PM</i></span>
+								<canvas class=<%=obj.daily.data[3].icon%> width="25" height="25"> </canvas>
+								<%=Math.round(fToC(obj.daily.data[3].temperatureMax))%>°(max)<span><%= obj.Day((obj.day_num()+3)%7) %><i><label class="fa fa-clock-o" aria-hidden="true"></label> 4:00 PM</i></span>
 							</li>
 						</ul>
 					</div>

@@ -46,7 +46,7 @@ app.get("/results", function(req, resp){
             //console.log(res);
             latitude = res[0].latitude;
             longitude = res[0].longitude;
-            console.log(JSON.stringify(res, undefined, 2));
+            //console.log(JSON.stringify(res, undefined, 2));
             var url = "https://api.darksky.net/forecast/218682c0e0714e069de1b9c5ab44f6ed/"+latitude+","+longitude;
                     request(url,function(error, response, body){
                  if(!error&&response.statusCode == 200){
@@ -56,6 +56,11 @@ app.get("/results", function(req, resp){
                 query : query,
                 current : data.currently,
                 hourly : data.hourly,
+                daily : data.daily,
+                day_num : () => {
+                  var t = new Date();
+                  return t.getDay();
+                },
                 timeConverter : function (UNIX_timestamp) {
                       var a = new Date(UNIX_timestamp * 1000 + 1.98e+7);
                       var months = ['Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sep','Oct','Nov','Dec'];
@@ -74,6 +79,30 @@ app.get("/results", function(req, resp){
                       
                       return time;
                     
+                },
+                Day : function (day){
+                      switch (day) {
+                        case 0:
+                          return "Sunday";
+                        
+                        case 1:
+                          return "Monday";
+                          
+                        case 2:
+                          return "Tuesday";
+                          
+                        case 3:
+                          return "Wednesday";
+                        
+                        case 4:
+                          return "Thursday";
+                          
+                        case 5:
+                          return "Friday";
+                    
+                        case 6:
+                          return "Saturday";
+                      }
                 }
               }
                 console.log(Math.round(fToC(data.currently.temperature)));
